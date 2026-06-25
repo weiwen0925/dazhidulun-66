@@ -195,40 +195,38 @@ img{-webkit-user-drag:none;}
   .preface-inner{padding:22px 20px;}
 }
 
-/* wy-cross-nav-css v1 */
-/* ── 跨卷導覽（側欄底部）── */
-.sb-cross{display:flex;flex-direction:column;align-items:center;gap:8px;
-  width:100%;margin:18px 0 4px;padding:18px 4px 6px;position:relative;}
-.sb-cross::before{content:"";position:absolute;top:0;left:14%;right:14%;
-  height:1px;background:linear-gradient(90deg,
-    transparent 0%,rgba(184,134,11,.15) 18%,
-    var(--gold,#b8860b) 50%,
-    rgba(184,134,11,.15) 82%,transparent 100%);
-  box-shadow:0 1px 0 rgba(212,168,75,.18);}
-.sb-cross::after{content:"";position:absolute;top:6px;left:38%;right:38%;
-  height:1px;background:linear-gradient(90deg,
-    transparent,rgba(184,134,11,.55),transparent);}
-.sb-x{display:flex;flex-direction:column;align-items:center;gap:3px;
-  text-decoration:none;color:var(--sbText,#d4c4a8);padding:4px 4px;width:100%;
-  border-radius:7px;transition:all .25s;}
-.sb-x:hover{background:rgba(184,134,11,.14);transform:translateY(-1px);}
-.sb-x-glyph{width:30px;height:30px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  border:1.2px solid rgba(212,196,168,.55);
-  color:var(--goldL,#d4a84b);font-family:"Noto Sans TC",sans-serif;font-size:14px;
-  background:rgba(184,134,11,.08);transition:all .25s;}
-.sb-x:hover .sb-x-glyph{border-color:var(--gold,#b8860b);color:#fff;
-  background:linear-gradient(135deg,var(--gold,#b8860b),var(--goldL,#d4a84b));
-  box-shadow:0 0 10px rgba(184,134,11,.5);}
-.sb-x-label{font-family:"Noto Sans TC",sans-serif;font-size:10.5px;
-  letter-spacing:1.2px;color:var(--sbText,#d4c4a8);opacity:.78;text-align:center;
-  line-height:1.25;}
-.sb-x:hover .sb-x-label{color:var(--goldL,#d4a84b);opacity:1;}
-.sb-x-hub .sb-x-glyph{background:linear-gradient(135deg,
-  rgba(184,134,11,.22),rgba(212,168,75,.18));
-  border-color:rgba(212,168,75,.55);color:var(--goldL,#d4a84b);font-size:13px;
-  font-weight:700;letter-spacing:1px;}
-
+/* ===== 總目錄字卡影音膠囊 ===== */
+.toc-card-wrap{position:relative;display:block;}
+.toc-card{padding-bottom:48px!important;}
+.toc-video{position:absolute;right:14px;bottom:13px;z-index:2;
+  display:inline-flex;align-items:center;gap:5px;
+  font-family:"Noto Sans TC",sans-serif;font-size:12.5px;letter-spacing:1px;
+  color:#fff;text-decoration:none;
+  background:linear-gradient(135deg,#b8860b,#d4a84b);
+  border:1px solid #a6790a;border-radius:14px;padding:4px 12px 4px 10px;
+  box-shadow:0 2px 7px rgba(184,134,11,.32);transition:background .2s,box-shadow .2s,transform .15s;}
+.toc-video:hover{background:linear-gradient(135deg,#a6790a,#c69a1e);
+  box-shadow:0 4px 12px rgba(184,134,11,.5);transform:translateY(-1px);}
+.toc-video .ic-play{width:10px;height:10px;flex:none;}
+/* ===== 主頁浮動「本品影音」鈕 ===== */
+.fab-video{position:fixed;right:22px;bottom:84px;z-index:131;
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:"Noto Sans TC",sans-serif;color:#fff;text-decoration:none;
+  background:linear-gradient(135deg,#b8860b,#d4a84b);
+  border:1px solid #a6790a;border-radius:24px;padding:9px 17px 9px 15px;
+  box-shadow:0 4px 14px rgba(184,134,11,.42);
+  opacity:0;transform:translateY(10px);pointer-events:none;
+  transition:opacity .3s,transform .3s,background .2s,box-shadow .2s;}
+.fab-video.show{opacity:1;transform:translateY(0);pointer-events:auto;}
+.fab-video:hover{background:linear-gradient(135deg,#a6790a,#c69a1e);
+  box-shadow:0 6px 18px rgba(184,134,11,.55);}
+.fab-video .ic-play{width:13px;height:13px;flex:none;}
+.fab-video .fab-label{display:inline-flex;align-items:baseline;gap:3px;}
+.fab-video .fab-l1{font-size:13.5px;font-weight:500;letter-spacing:1px;}
+.fab-video .fab-l2{font-size:11.5px;opacity:.92;letter-spacing:.5px;}
+@media print{.fab-video{display:none!important;}}
+@media (max-width:600px){.fab-video{font-size:12.5px;padding:8px 14px;bottom:78px;}
+  .fab-video .fab-l1{font-size:12.5px;}}
 </style>
 <meta content="v2-silent" name="wy-full-protection"/>
 <title>大智度論 卷六十六 白話彙整｜釋歎信行品・般若不住實相義・深般若不驚不怖善付菩薩事</title>
@@ -352,21 +350,6 @@ img{-webkit-user-drag:none;}
 <a class="sb-item" data-ch="2" href="#ch-2"><span class="sb-circle" data-wytext="k8Oh"></span><span class="sb-label" data-wytext="k8GggNz1jcbCkvfN"></span></a>
 <a class="sb-item" data-ch="3" href="#ch-3"><span class="sb-circle" data-wytext="k8Gk"></span><span class="sb-label" data-wytext="ku+pgNrigObNnfrc"></span></a>
 </nav>
-  <!-- wy-cross-nav v1 -->
-  <div class="sb-cross">
-    <a class="sb-x" href="https://weiwen0925.github.io/dazhidulun-65/" title="第六十五卷">
-      <span class="sb-x-glyph">←</span>
-      <span class="sb-x-label">卷六十五</span>
-    </a>
-    <a class="sb-x sb-x-hub" href="https://weiwen0925.github.io/dazhidulun-0/" title="大智度論門頁">
-      <span class="sb-x-glyph">智</span>
-      <span class="sb-x-label">門頁</span>
-    </a>
-    <a class="sb-x" href="https://weiwen0925.github.io/dazhidulun-67/" title="第六十七卷">
-      <span class="sb-x-glyph">→</span>
-      <span class="sb-x-label">卷六十七</span>
-    </a>
-  </div>
 </aside>
 <main class="main">
 <div class="site-hero">
@@ -393,9 +376,9 @@ img{-webkit-user-drag:none;}
 <h2 class="toc-title" data-wytext="kMGQRIbhxkmN+eg="></h2>
 <div class="toc-desc" data-wytext="kt2KgvjAjdPCncfjTu+BFsj7hpL8gIHs+43syVWuwk7KmprJzrGS6qyM5smPxciR1PyLvrcW78ERkvycgNnzjfrlkdb5i6C30pf61tzZ"></div>
 <div class="toc-grid">
-<a class="toc-card" href="#ch-1"><span class="toc-num" data-wytext="k8Gt"></span><span class="toc-name" data-wytext="kNWBgNn6jfrlVa7CTsSxvcvbv5PGjIzA9o365ZLA2Yu2rdOg99XN7REXERsGSQcZDQYdEBRCQhUcBAxPRl+e18iM2fuc9bTejaFW88BZy8HMnPb1jejyktm30LaKVvPAWcjU25LI/4HF55PMsN6+qpGYzZ2VyYbSxo/MzFBaHV1XWBM="></span></a>
-<a class="toc-card" href="#ch-2"><span class="toc-num" data-wytext="k8Oh"></span><span class="toc-name" data-wytext="kNWBgNv2jfrlVa7CTsW+msX9lJPBoIDc9Y3GwpL3zYmTnwpeBlAZWU4IAAkbVEYBAxZDXkNUD0jVyvbF7Oae0OSAyOOR16bRiZaejP5Z79NBntDggM36k/uO05WzVvPAWcrw+5zf2I3uz5PWgd+xopG11pCq611VGxkFG1I="></span></a>
-<a class="toc-card" href="#ch-3"><span class="toc-num" data-wytext="k8Gk"></span><span class="toc-name" data-wytext="kNWBgNnzjfrlVa7CTsSxvcvBgJ/xgYzq34zR6ZzF74qVu9Ct4BG1zg2B9/6M0vyd49yGu5/Sl/0NBAlMCkEZBAgXBlFXGkJVG14DU1VHyd71ksXFgePXk/aj3rmEnqfenKLzidLwjdz4hfTODfSBDZOq7J+5+YTAzo7w6oT96ci7t8jgtZ74vlhOCRgICks="></span></a>
+<div class="toc-card-wrap"><a class="toc-card" href="#ch-1"><span class="toc-num" data-wytext="k8Gt"></span><span class="toc-name" data-wytext="kNWBgNn6jfrlVa7CTsSxvcvbv5PGjIzA9o365ZLA2Yu2rdOg99XN7REXERsGSQcZDQYdEBRCQhUcBAxPRl+e18iM2fuc9bTejaFW88BZy8HMnPb1jejyktm30LaKVvPAWcjU25LI/4HF55PMsN6+qpGYzZ2VyYbSxo/MzFBaHV1XWBM="></span></a><a aria-label="section video" class="toc-video" data-wytext="SwpbA0EbGgAFWAQcCklTWBBURQUMSEZBGQQIFwZRVwdOG0ZBF0hVWUsNDRZVSwcAHgcLQ0J1QhpeBVsNEggfHwsLDVFXXg0GFh9CEUVND1pdCgkdDFUISExgDhYYAABDFRxVTE0SS1pJQwUPWV4IEVlCAR4TgdzLgfbX" href="https://youtu.be/JnOSXEZFcfg" rel="noopener" target="_blank"></a></div>
+<div class="toc-card-wrap"><a class="toc-card" href="#ch-2"><span class="toc-num" data-wytext="k8Oh"></span><span class="toc-name" data-wytext="kNWBgNv2jfrlVa7CTsW+msX9lJPBoIDc9Y3GwpL3zYmTnwpeBlAZWU4IAAkbVEYBAxZDXkNUD0jVyvbF7Oae0OSAyOOR16bRiZaejP5Z79NBntDggM36k/uO05WzVvPAWcrw+5zf2I3uz5PWgd+xopG11pCq611VGxkFG1I="></span></a><a aria-label="section video" class="toc-video" data-wytext="SwpbA0EbGgAFWAQcCklTWBBURQUMSEZBGQQIFwZRVwdOG0ZBF0hVWUsNDRZVSwcAHgcLQ0J1QhpeBVsNEggfHwsLDVFXXg0GFh9CEUVND1pdCgkdDFUISExgDhYYAABDFRxVTE0SS1pJQwUPWV4IEVlCAR4TgdzLgfbX" href="https://youtu.be/aSQWbTpcWek" rel="noopener" target="_blank"></a></div>
+<div class="toc-card-wrap"><a class="toc-card" href="#ch-3"><span class="toc-num" data-wytext="k8Gk"></span><span class="toc-name" data-wytext="kNWBgNnzjfrlVa7CTsSxvcvBgJ/xgYzq34zR6ZzF74qVu9Ct4BG1zg2B9/6M0vyd49yGu5/Sl/0NBAlMCkEZBAgXBlFXGkJVG14DU1VHyd71ksXFgePXk/aj3rmEnqfenKLzidLwjdz4hfTODfSBDZOq7J+5+YTAzo7w6oT96ci7t8jgtZ74vlhOCRgICks="></span></a><a aria-label="section video" class="toc-video" data-wytext="SwpbA0EbGgAFWAQcCklTWBBURQUMSEZBGQQIFwZRVwdOG0ZBF0hVWUsNDRZVSwcAHgcLQ0J1QhpeBVsNEggfHwsLDVFXXg0GFh9CEUVND1pdCgkdDFUISExgDhYYAABDFRxVTE0SS1pJQwUPWV4IEVlCAR4TgdzLgfbX" href="https://youtu.be/WSuGnoTz2hc" rel="noopener" target="_blank"></a></div>
 </div>
 </div>
 <section class="chapter" data-ch="1" id="ch-1">
@@ -449,6 +432,7 @@ img{-webkit-user-drag:none;}
 <p data-wytext="kt2KgvjAjdPCncfjTu+BFsj7hpL8gIHs+43syVWuwk7KmprJzrGS6qyM5smPxciR1PyLvrfTkO/X4s0="></p><p data-wytext="n/i7jOH/gdfpk8TMhqKf3rvfEZ75jUSjzUiM2vmL0sjEiKrF+oOS5aaA2fOA/uuc39yIvJ/Rk/PVzPkNjMzV"></p>
 </footer>
 </main>
+<a aria-label="watch this section video" class="fab-video" href="https://youtu.be/JnOSXEZFcfg" id="fabVideo" rel="noopener" target="_blank"><svg aria-hidden="true" class="ic-play" fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg><span class="fab-label"><span class="fab-l1" data-wytext="keWBgfL7jdTVnPPG"></span><span class="fab-l2" id="fabName"></span></span></a>
 <button id="backTop" title="回到頂部">↑</button>
 <script>
 /* anti-copy outer */
@@ -646,6 +630,33 @@ if(tg){
   }else{
     window.addEventListener("load",function(){ setTimeout(go,600); });
   }
+})();
+</script>
+<script id="wy-video">
+(function(){
+  var VID={1:"https://youtu.be/JnOSXEZFcfg",2:"https://youtu.be/aSQWbTpcWek",3:"https://youtu.be/WSuGnoTz2hc"};
+  function update(){
+    var fab=document.getElementById("fabVideo"); if(!fab) return;
+    var secs=document.querySelectorAll("section.chapter"); var active=null;
+    secs.forEach(function(s){ if(s.getBoundingClientRect().top<window.innerHeight*0.42) active=s; });
+    if(active){
+      var p=active.getAttribute("data-ch");
+      if(VID[p]) fab.setAttribute("href",VID[p]);
+      var lab=document.querySelector('.sb-item[data-ch="'+p+'"] .sb-label');
+      var nm=lab?(lab.textContent||"").trim():"";
+      var f2=document.getElementById("fabName");
+      if(f2) f2.textContent=nm?(" · "+nm):"";
+      fab.classList.add("show");
+    }else{
+      fab.classList.remove("show");
+    }
+  }
+  window.addEventListener("scroll",update,{passive:true});
+  window.addEventListener("resize",update,{passive:true});
+  if(window.__wyReady&&window.__wyReady.then){
+    window.__wyReady.then(function(ok){ if(ok){ [300,1000,2500].forEach(function(t){setTimeout(update,t);}); } });
+  }
+  window.addEventListener("load",function(){ setTimeout(update,500); });
 })();
 </script>
 <script id="wy-print-intercept">
